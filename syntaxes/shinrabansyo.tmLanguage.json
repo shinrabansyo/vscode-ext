@@ -41,6 +41,10 @@
           "name": "meta.inline.assembly.shinrabansyo",
           "patterns": [
             {
+              "name": "comment.line.assenbly.shinrabansyo",
+              "match": "//.*$"
+            },
+            {
               "name": "keyword.instruction.assembly.shinrabansyo",
               "match": "(?i)\\b(?:nop|add|sub|addi|subi|beq|bne|blt|ble|jal|lw|lh|lb|lhu|lbu|ilb|sw|sh|sb|isb|in|out|and|or|xor|srl|sra|sll|andi|ori|xori|srli|srai|slli)\\b"
             },
