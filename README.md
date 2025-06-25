@@ -1,8 +1,6 @@
-# VSCode Extension
+# 森羅万象プロジェクト VSCode 拡張
 
-## Command
+## 機能
 
-```shell
-$ npm install
-$ vsce package
-```
+- シンタックスハイライト
+- スニペット
