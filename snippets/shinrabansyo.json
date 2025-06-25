@@ -1,0 +1,48 @@
+{
+  "関数定義": {
+    "prefix": "fn",
+    "body": [
+      "fn ${1:new_function}(${2:}) -> ${3:i32} {",
+      "    $0",
+      "}"
+    ]
+  },
+  "If 文": {
+    "prefix": "if",
+    "body": [
+      "if (${1:true}) {",
+      "    $0",
+      "}"
+    ]
+  },
+  "For 文": {
+    "prefix": "for",
+    "body": [
+      "for (${1:var i = 0;}; ${2:i < 10}; ${3:i += 1}) {",
+      "    $0",
+      "}"
+    ]
+  },
+  "While 文": {
+    "prefix": "while",
+    "body": [
+      "while (${1:true}) {",
+      "    $0",
+      "}"
+    ]
+  },
+  "変数宣言": {
+    "prefix": "var",
+    "body": [
+      "var ${1:new_variable} = ${2:0};"
+    ]
+  },
+  "インラインアセンブリ記述": {
+    "prefix": "asm",
+    "body": [
+      "asm! {",
+      "    ${1:addi R4 = R0, 1}",
+      "}"
+    ]
+  }
+}

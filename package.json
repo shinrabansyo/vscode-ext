@@ -29,6 +29,12 @@
         "scopeName": "source.shinrabansyo",
         "path": "./syntaxes/shinrabansyo.tmLanguage.json"
       }
+    ],
+    "snippets": [
+      {
+        "language": "shinrabansyo",
+        "path": "./snippets/shinrabansyo.json"
+      }
     ]
   },
   "dependencies": {
