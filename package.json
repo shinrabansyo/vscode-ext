@@ -1,0 +1,39 @@
+{
+  "name": "shinrabansyo-vscode",
+  "displayName": "森羅万象プロジェクト",
+  "description": "森羅万象プロジェクトの VSCode 拡張",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "shinrabansyo",
+        "aliases": [
+          "Shinrabansyo",
+          "shinrabansyo"
+        ],
+        "extensions": [
+          "sb"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "shinrabansyo",
+        "scopeName": "source.shinrabansyo",
+        "path": "./syntaxes/shinrabansyo.tmLanguage.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "generator-code": "^1.11.9",
+    "vsce": "^2.15.0",
+    "yo": "^5.1.0"
+  }
+}
