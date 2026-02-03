@@ -29,9 +29,9 @@
     "inline-assembly": {
       "patterns": [
         {
-          "begin": "\\b(asm!)\\s*\\{",
+          "begin": "\\b(asm)\\s*\\{",
           "beginCaptures": {
-            "1": { "name": "entity.name.ext.shinrabansyo" },
+            "1": { "name": "keyword.control.shinrabansyo" },
             "2": { "name": "keyword.other.assembly.shinrabansyo" }
           },
           "end": "\\}",
