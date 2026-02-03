@@ -22,16 +22,16 @@
         },
         {
           "name": "variable.other.shinrabansyo",
-          "match": "\\b(async|await|break|const|continue|crate|enum|extern|impl|in|let|loop|match|mod|move|mut|pub|ref|Self|self|static|struct|super|trait|type|unsafe|use|where)\\b"
+          "match": "\\b(async|await|break|const|continue|crate|enum|extern|impl|in|let|loop|match|mod|move|mut|pub|ref|Self|self|static|super|trait|type|unsafe|use|where)\\b"
         }
       ]
     },
     "inline-assembly": {
       "patterns": [
         {
-          "begin": "\\b(asm!)\\s*\\{",
+          "begin": "\\b(asm)\\s*\\{",
           "beginCaptures": {
-            "1": { "name": "entity.name.ext.shinrabansyo" },
+            "1": { "name": "keyword.control.shinrabansyo" },
             "2": { "name": "keyword.other.assembly.shinrabansyo" }
           },
           "end": "\\}",
