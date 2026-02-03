@@ -22,7 +22,7 @@
         },
         {
           "name": "variable.other.shinrabansyo",
-          "match": "\\b(async|await|break|const|continue|crate|enum|extern|impl|in|let|loop|match|mod|move|mut|pub|ref|Self|self|static|struct|super|trait|type|unsafe|use|where)\\b"
+          "match": "\\b(async|await|break|const|continue|crate|enum|extern|impl|in|let|loop|match|mod|move|mut|pub|ref|Self|self|static|super|trait|type|unsafe|use|where)\\b"
         }
       ]
     },
