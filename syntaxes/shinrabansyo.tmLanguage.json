@@ -60,7 +60,7 @@
               "match": "(?i)\\b(?:nop|add|sub|addi|subi|beq|bne|blt|ble|jal|lw|lh|lb|lhu|lbu|ilb|sw|sh|sb|isb|in|out|and|or|xor|srl|sra|sll|andi|ori|xori|srli|srai|slli)\\b"
             },
             {
-              "name": "variable.other.assembly.yourlang",
+              "name": "variable.other.assembly.shinrabansyo",
               "match": "\\b(?!R\\d+\\b)[A-Za-z_]\\w*\\b"
             },
             {
@@ -69,7 +69,7 @@
             },
             {
               "name": "constant.numeric.assembly.shinrabansyo",
-              "match": "\\b\\d+\\b"
+              "match": "\\b(0b|0|0x)?\\d+\\b"
             },
             {
               "name": "punctuation.separator.assembly.shinrabansyo",
