@@ -2,7 +2,7 @@
   "name": "shinrabansyo-vscode",
   "displayName": "森羅万象プロジェクト",
   "description": "森羅万象プロジェクトの VSCode 拡張",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": {
     "type": "git",
     "url": "https://github.com/shinrabansyo/vscode-ext"
