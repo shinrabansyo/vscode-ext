@@ -20,6 +20,10 @@
     "keywords-original": {
       "patterns": [
         {
+          "name": "entity.name.type.shiranbansyo",
+          "match": "\\b(addr|daddr|iaddr)\\b"
+        },
+        {
           "name": "keyword.declaration.shinrabansyo",
           "match": "\\bvar\\b"
         }
