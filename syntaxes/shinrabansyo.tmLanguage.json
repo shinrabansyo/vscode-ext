@@ -4,40 +4,262 @@
   "scopeName": "source.shinrabansyo",
   "patterns": [
     {
-      "include": "#keywords-original"
+      "include": "#comments"
     },
     {
-      "include": "#keywords-overwrite"
+      "include": "#constants"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#punctuation"
+    },
+    {
+      "include": "#functions"
     },
     {
       "include": "#inline-assembly"
     },
     {
-      "include": "source.rust"
+      "include": "#variables"
     }
   ],
   "repository": {
-    "keywords-original": {
+    "comments": {
       "patterns": [
         {
-          "name": "entity.name.type.shiranbansyo",
-          "match": "\\b(addr|daddr|iaddr)\\b"
-        },
-        {
-          "name": "keyword.declaration.shinrabansyo",
-          "match": "\\bvar\\b"
+          "name": "comment.line.double-slash.shinrabansyo",
+          "match": "//.*$"
         }
       ]
     },
-    "keywords-overwrite": {
+    "constants": {
       "patterns": [
         {
-          "name": "keyword.other.rust",
-          "match": "\\bsizeof\\b"
+          "name": "constant.numeric.hex.shinrabansyo",
+          "match": "\\b0x[0-9a-fA-F]+\\b"
         },
         {
-          "name": "variable.other.rust",
-          "match": "\\b(async|await|break|const|continue|crate|enum|extern|impl|in|let|loop|match|mod|move|mut|pub|ref|Self|self|static|super|trait|type|unsafe|use|where)\\b"
+          "name": "constant.numeric.oct.shinrabansyo",
+          "match": "\\b0o[0-7]+\\b"
+        },
+        {
+          "name": "constant.numeric.bin.shinrabansyo",
+          "match": "\\b0b[01]+\\b"
+        },
+        {
+          "name": "constant.numeric.decimal.shinrabansyo",
+          "match": "\\b\\d+\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.shinrabansyo",
+          "match": "\\b(if|else|while|for|return)\\b"
+        },
+        {
+          "name": "keyword.declaration.rust",
+          "match": "\\b(struct|var)\\b"
+        },
+        {
+          "name": "keyword.operator.logical.shinrabansyo",
+          "match": "(\\^|\\||\\|\\||&&|<<|>>|!)(?!=)"
+        },
+        {
+          "name": "keyword.operator.borrow.and.shinrabansyo",
+          "match": "&(?![&=])"
+        },
+        {
+          "name": "keyword.operator.assignment.shinrabansyo",
+          "match": "(\\+=|-=|\\*=|/=|%=|\\^=|&=|\\|=|<<=|>>=)"
+        },
+        {
+          "name": "keyword.operator.assignment.equal.shinrabansyo",
+          "match": "(?<![<>])=(?!=|>)"
+        },
+        {
+          "name": "keyword.operator.comparison.shinrabansyo",
+          "match": "(=(=)?(?!>)|!=|<=|(?<!=)>=)"
+        },
+        {
+          "name": "keyword.operator.comparison.shinrabansyo",
+          "match": "(?:\\b|(?:(\\))|(\\])|(\\})))[ \\t]+([<>])[ \\t]+(?:\\b|(?:(\\()|(\\[)|(\\{)))",
+          "captures": {
+            "1": {
+                "name": "punctuation.brackets.round.rust"
+            },
+            "2": {
+                "name": "punctuation.brackets.square.rust"
+            },
+            "3": {
+                "name": "punctuation.brackets.curly.rust"
+            },
+            "4": {
+                "name": "keyword.operator.comparison.rust"
+            },
+            "5": {
+                "name": "punctuation.brackets.round.rust"
+            },
+            "6": {
+                "name": "punctuation.brackets.square.rust"
+            },
+            "7": {
+                "name": "punctuation.brackets.curly.rust"
+            }
+          }
+        },
+        {
+          "name": "keyword.operator.math.shinrabansyo",
+          "match": "(([+%]|(\\*(?!\\w)))(?!=))|(-(?!>))|(/(?!/))"
+        },
+        {
+          "name": "keyword.operator.access.shinrabansyo",
+          "match": "\\.(?!\\.)"
+        },
+        {
+          "name": "keyword.operator.arrow.shinrabansyo",
+          "match": "->|<-"
+        },
+        {
+          "name": "keyword.operator.atmark.shinrabansyo",
+          "match": "@"
+        },
+        {
+          "name": "keyword.operator.colon.rust",
+          "match": ":"
+        },
+        {
+          "name": "keyword.other.rust",
+          "match": "\\b(as|sizeof)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "entity.name.type.shinrabansyo",
+          "match": "\\b(_?[A-Z][A-Za-z0-9_]*)"
+        },
+        {
+          "name": "entity.name.type.numeric.shinrabansyo",
+          "match": "\\b(i8|i16|i32)\\b"
+        },
+        {
+          "name": "entity.name.type.primitive.shinrabansyo",
+          "match": "\\b(bool|char|(d|i)addr|void)\\b"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.comma.shinrabansyo",
+          "match": ","
+        },
+        {
+          "name": "punctuation.brackets.curly.shinrabansyo",
+          "match": "[{}]"
+        },
+        {
+          "name": "punctuation.brackets.round.shinrabansyo",
+          "match": "[()]"
+        },
+        {
+          "name": "punctuation.semi.shinrabansyo",
+          "match": ";"
+        },
+        {
+          "name": "punctuation.brackets.square.shinrabansyo",
+          "match": "[\\[\\]]"
+        },
+        {
+          "name": "punctuation.brackets.angle.shinrabansyo",
+          "match": "(?<!=)[<>]"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "meta.function.definition.shinrabansyo",
+          "begin": "\\b(fn)\\s+([A-Za-z0-9_]+)",
+          "beginCaptures": {
+            "1": { "name": "keyword.other.fn.shinrabansyo" },
+            "2": { "name": "entity.name.function.shinrabansyo" }
+          },
+          "end": "(\\{)|(;)",
+          "endCaptures": {
+            "1": {
+                "name": "punctuation.brackets.curly.rust"
+            },
+            "2": {
+                "name": "punctuation.semi.rust"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#constants"
+            },
+            {
+              "include": "#keywords"
+            },
+            {
+              "include": "#types"
+            },
+            {
+              "include": "#punctuation"
+            },
+            {
+              "include": "#functions"
+            },
+            {
+              "include": "#variables"
+            }
+          ]
+        },
+        {
+          "name": "meta.function.call.shinrabansyo",
+          "begin": "\\b([A-Za-z0-9_]+)\\s*(\\()",
+          "beginCaptures": {
+            "1": { "name": "entity.name.function.shinrabansyo" },
+            "2": { "name": "punctuation.parenthesis.open.shinrabansyo" }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": { "name": "punctuation.parenthesis.close.shinrabansyo" }
+          },
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "include": "#constants"
+            },
+            {
+              "include": "#keywords"
+            },
+            {
+              "include": "#types"
+            },
+            {
+              "include": "#punctuation"
+            },
+            {
+              "include": "#functions"
+            },
+            {
+              "include": "#variables"
+            }
+          ]
         }
       ]
     },
@@ -46,40 +268,50 @@
         {
           "begin": "\\b(asm)\\s*\\{",
           "beginCaptures": {
-            "1": { "name": "keyword.control.shinrabansyo" },
-            "2": { "name": "keyword.other.assembly.shinrabansyo" }
+            "1": { "name": "keyword.control.inasm.shinrabansyo" },
+            "2": { "name": "keyword.other.inasm.shinrabansyo" }
           },
           "end": "\\}",
           "endCaptures": {
-            "0": { "name": "keyword.other.assembly.shinrabansyo" }
+            "0": { "name": "keyword.other.inasm.shinrabansyo" }
           },
-          "name": "meta.inline.assembly.shinrabansyo",
+          "name": "meta.inline.inasm.shinrabansyo",
           "patterns": [
             {
-              "name": "comment.line.assenbly.shinrabansyo",
+              "name": "comment.line.inasm.shinrabansyo",
               "match": "//.*$"
             },
             {
-              "name": "keyword.instruction.assembly.shinrabansyo",
+              "name": "keyword.instruction.inasm.shinrabansyo",
               "match": "(?i)\\b(?:nop|add|sub|addi|subi|beq|bne|blt|ble|jal|lw|lh|lb|lhu|lbu|ilb|sw|sh|sb|isb|in|out|and|or|xor|srl|sra|sll|andi|ori|xori|srli|srai|slli)\\b"
             },
             {
-              "name": "variable.other.assembly.shinrabansyo",
+              "name": "variable.other.inasm.shinrabansyo",
               "match": "\\b(?!R\\d+\\b)[A-Za-z_]\\w*\\b"
             },
             {
-              "name": "constant.other.register.assembly.shinrabansyo",
+              "name": "constant.other.register.inasm.shinrabansyo",
               "match": "\\bR\\d+\\b"
             },
             {
-              "name": "constant.numeric.assembly.shinrabansyo",
-              "match": "\\b(0b|0|0x)?\\d+\\b"
+              "name": "punctuation.separator.inasm.shinrabansyo",
+              "match": "->|=|,|\\(|\\)"
             },
             {
-              "name": "punctuation.separator.assembly.shinrabansyo",
-              "match": "->|=|,|\\(|\\)"
+              "include": "#constants"
+            },
+            {
+              "include": "#variables"
             }
           ]
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.shinrabansyo",
+          "match": "\\b(?<!(?<!\\.)\\.)(?:r#(?!(crate|[Ss]elf|super)))?[a-z0-9_]+\\b"
         }
       ]
     }
